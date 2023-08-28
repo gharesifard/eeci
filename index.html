@@ -53,30 +53,18 @@ h1, h2, h3, h4, h5, h6 {
             </li>            
 <br></ul>
 
-<h3 class="w3-left"> Instructors </h3><br><br>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">    
-    <div class="w3-col l6 m12 w3-margin-bottom">
+<h3 class="w3-left"> Instructors </h3><br><br>  
       <div class="w3-card">
-        <img src="pics/BG.jpeg" alt="Bahman" style="width:395px">
+        <img src="pics/picture_Bahman_Julien.jpeg" alt="Julien" style="width:600px">
         <div class="w3-container">
-          <h3>Bahman Gharesifard</h3>
+          <h3>Bahman Gharesifard </h3>
           <p class="w3-opacity">UCLA</p>          
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> <a href="http://gharesifard.github.io"> Webpage</a></button></p>
-        </div>
-      </div>
-    </div>
-    <!-- This is one studen't profile -->
-    <div class="w3-col l6 m12 w3-margin-bottom">
-      <div class="w3-card">
-        <img src="pics/Julien1.png" alt="Julien" style="width:300px">
-        <div class="w3-container">
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> <a href="https://gharesifard.github.io"> Webpage</a></button></p><br>
           <h3>Julien Hendrickx </h3>
           <p class="w3-opacity">UCLouvain</p>          
           <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> <a href="https://perso.uclouvain.be/julien.hendrickx/index.html"> Webpage</a></button></p>
         </div>
-      </div>           
-   </div>    
-  </div>
+      </div>              
 </div>
 
 
@@ -89,34 +77,26 @@ h1, h2, h3, h4, h5, h6 {
     <br>
 
     <!--<div class="w3-col l6 w3-padding-large">-->
-      <h3 class="w3-left"> Summary of the Course </h3><br>
+      <h3 class="w3-left"> Summary of the Course (tentative) </h3><br>
       <br>
       <!--<h4>This</h4>-->
       <p class="w3-large w3-text-grey w3-hide-medium">   
-      TBA    
-<!--Networked systems play an ever-growing role in our increasingly interconnected world. One of the most fundamental challenges in the field of networked control system is to understand the connection between the behavior of dynamics over networks and the underlying graph structure. 
-This course introduces the main toolset for analyzing and controlling interconnected systems by covering three main topics.We begin with an overview of the (average) consensus problem, in which agents try to reach a common value or trajectory via local interactions. We discuss the effects of graph structure and provide a self-contained introduction to the basics of algebraic graph theory. Our second topic is distributed optimization, which is a canonical model for optimizing a global objective from local interactions over a network. A central focus will be connecting the performance of distributed optimization methods to the features of the underlying network. Our final topic is epidemic propagation over graphs. We will discuss the classic epidemic models, their network generalizations, and their extensions to model the spread of COVID-19. Besides focusing on basic properties of network epidemic models, we discuss control strategies for containment of the epidemic. 
-The course functions as a good introduction to many different themes in decentralized algorithms and algorithms for decentralized systems. -->
+       Gradient-flow dynamics are at the forefront of numerous engineering and machine learning problems. Many algorithms utilizing gradient dynamics are large-scale, with computations being performed in a decentralized fashion over a network. This decentralization can be attributed to either information limitations or computational overhead in gradient computations. This course introduces the primary toolkit for designing and analyzing efficient decentralized optimization algorithms. We initiate the course by introducing the fundamentals of decentralized optimization problems, where individuals aim to find a common optimizer through local interactions over a network. We delve into both discrete and continuous-time dynamics, explore the effects of graph structures by providing a self-contained introduction to the basics of algebraic graph theory, and examine the impacts of uncertainty and randomness. A central focus will be on connecting the performance of distributed optimization methods to the features of the underlying network. The second part of the course will delve into fundamental limits in a broad class of distributed optimization algorithms and establish state-of-the-art worst-case performance bounds. We will also study issues of robustness and adversarial behaviors. In the final part of the course, we will concentrate on decentralized greedy algorithms for submodular optimization problems with limited information. These algorithms have found numerous recent applications, such as data summarization and selection problems in natural language processing, as well as sensor deployment in robotics.
 </p>
       <br> 
       <!--<div class="w3-col l6 w3-padding-large">-->
-      <h3 class="w3-left"> Outline </h3><br><br>
+      <h3 class="w3-left"> Outline (tentative)</h3><br><br>
       
       <p class="w3-text-grey">   
-      TBA               
-      <!--    <ul style="font-family:courier;">
-            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Distributed optimization and federated learning</b> </li>
-              <ul style="font-family:courier;">
-                <li class="w3-text-grey" style="list-style-type:circle;">Linear Consensus: deterministic and stochastic cases
-                </li>                
-              </ul>             
-              <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Distributed submodular optimization</b> </li>
-              <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Social networks</b> </li>
-              <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Fundamental limits in distributed control</b> </li>
+          <ul style="font-family:courier;">
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Decentralization in optimization and learning: an overview of the state-of-the-art</b> </li>            
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Consensus-based methods: deterministic and stochastic, with discrete and continuous-time dynamics</b> </li>
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Worst-case studies  and performance estimation for gradient dyanmics</b> </li>
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Fundamental limits in distributed optimization</b> </li>            
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Robustness and resiliency in distributed optimization</b> </li>            
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Distributed submodular optimization</b> </li>                           
             <br>
-          </ul> -->
-
-
+          </ul> 
       </p><br>   
 
   </div> 
