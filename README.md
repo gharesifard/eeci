@@ -1,1 +1,1 @@
-eeci2024.github.io
+eeci2025.github.io
