@@ -81,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
       <br>
       <!--<h4>This</h4>-->
       <p class="w3-large w3-text-grey w3-hide-medium">   
-       Gradient-flow dynamics are at the forefront of numerous engineering and machine learning problems. Many algorithms utilizing gradient dynamics are large-scale, with computations being performed in a decentralized fashion over a network. This decentralization can be attributed to either information limitations or computational overhead in gradient computations. This course introduces the primary toolkit for designing and analyzing efficient decentralized optimization algorithms. We initiate the course by introducing the fundamentals of decentralized optimization problems, where individuals aim to find a common optimizer through local interactions over a network. We delve into both discrete and continuous-time dynamics, explore the effects of graph structures by providing a self-contained introduction to the basics of algebraic graph theory, and examine the impacts of uncertainty and randomness. A central focus will be on connecting the performance of distributed optimization methods to the features of the underlying network. The second part of the course will delve into fundamental limits in a broad class of distributed optimization algorithms and establish state-of-the-art worst-case performance bounds. We will also study issues of robustness and adversarial behaviors. In the final part of the course, we will concentrate on decentralized greedy algorithms for submodular optimization problems with limited information. These algorithms have found numerous recent applications, such as data summarization and selection problems in natural language processing, as well as sensor deployment in robotics.
+       This course surveys decentralization in the context of optimization and learning, with focus on modern directions in large-scale machine learning. We begin with an overview of decentralization in optimization, presenting classical techniques alongside recent communication-efficient methods, where optimization is carried out through structured local updates and fixed communication protocols. We then develop some fundamental limits for distributed computation, highlighting oracle and communication lower bounds, as well as automated frameworks for deriving worst-case performance guarantees.  An important theme is non-convex optimization, with applications to in decentralized and federated settings, where stochastic gradient descent (SGD) and adaptive variants are analyzed under heterogeneity, asynchrony, and partial participation. We study convergence guarantees, variance-reduced methods, and adaptive gradient strategies, connecting them to the practice of federated learning across devices with limited resources. The last part of the course is devoted to robustness and resiliency, addressing Byzantine failures, adversarial models, and privacy-preserving mechanisms critical for federated and edge learning.
 </p>
       <br> 
       <!--<div class="w3-col l6 w3-padding-large">-->
@@ -90,11 +90,12 @@ h1, h2, h3, h4, h5, h6 {
       <p class="w3-text-grey">   
           <ul style="font-family:courier;">
             <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Decentralization in optimization and learning: an overview of the state-of-the-art</b> </li>            
-            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Consensus-based methods: deterministic and stochastic, with discrete and continuous-time dynamics</b> </li>
-            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Worst-case studies  and performance estimation for gradient dyanmics</b> </li>
-            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Fundamental limits in distributed computations and optimization</b> </li>            
-            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Robustness and resiliency in distributed optimization</b> </li>            
-            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Distributed submodular optimization</b> </li>                           
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Fundamental limits in distributed computations and optimization</b> </li>
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Focus classical decentralised deterministic technique</b> </li>
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Focus on adaptive gradient method</b> </li>
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Focus on stochastic method</b> </li>
+            <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Automated and principled approach to worst-case analysis </b> </li>
+                        <li class="w3-text-grey w3-large" style="list-style-type:circle;"><b>Robustness and resiliency in distributed optimization</b> </li>                        
             <br>
           </ul> 
       </p><br>   
