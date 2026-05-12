@@ -689,6 +689,7 @@
       celebrationFinal: false,
       soundOn: false,
       audioContext: null,
+      masterGain: null,
       stars: []
     };
 
@@ -804,6 +805,9 @@
         const AudioContextClass = window.AudioContext || window.webkitAudioContext;
         if (!AudioContextClass) return null;
         state.audioContext = new AudioContextClass();
+        state.masterGain = state.audioContext.createGain();
+        state.masterGain.gain.value = 0.9;
+        state.masterGain.connect(state.audioContext.destination);
       }
       if (state.audioContext.state === "suspended") {
         await state.audioContext.resume().catch(() => {
@@ -815,9 +819,7 @@
       return state.audioContext;
     }
 
-    async function playTone(frequency, duration = 0.22, type = "sine", volume = 0.032, delay = 0) {
-      if (!state.soundOn) return;
-      const audio = await ensureAudio();
+    function scheduleTone(audio, frequency, duration = 0.22, type = "sine", volume = 0.032, delay = 0) {
       if (!audio || audio.state !== "running") return;
       const start = audio.currentTime + delay;
       const oscillator = audio.createOscillator();
@@ -832,9 +834,28 @@
       gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
       oscillator.connect(filter);
       filter.connect(gain);
-      gain.connect(audio.destination);
+      gain.connect(state.masterGain || audio.destination);
       oscillator.start(start);
       oscillator.stop(start + duration + 0.04);
+    }
+
+    async function playTone(frequency, duration = 0.22, type = "sine", volume = 0.032, delay = 0) {
+      if (!state.soundOn) return;
+      const audio = await ensureAudio();
+      scheduleTone(audio, frequency, duration, type, volume, delay);
+    }
+
+    async function unlockSoundWithChime() {
+      state.soundOn = true;
+      updateSoundToggle();
+      const audio = await ensureAudio();
+      if (!audio || audio.state !== "running") {
+        state.soundOn = false;
+        updateSoundToggle();
+        return;
+      }
+      scheduleTone(audio, 392, 0.24, "sine", 0.04);
+      scheduleTone(audio, 523, 0.28, "sine", 0.034, 0.1);
     }
 
     function playSound(name) {
@@ -2003,16 +2024,7 @@
     soundToggle.addEventListener("click", async () => {
       const nextSoundState = !state.soundOn;
       if (nextSoundState) {
-        state.soundOn = true;
-        updateSoundToggle();
-        const audio = await ensureAudio();
-        if (!audio || audio.state !== "running") {
-          state.soundOn = false;
-          updateSoundToggle();
-          return;
-        }
-        await playTone(392, 0.24, "sine", 0.032);
-        playTone(523, 0.28, "sine", 0.026, 0.1);
+        await unlockSoundWithChime();
       } else {
         state.soundOn = false;
         updateSoundToggle();
